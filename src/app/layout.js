@@ -64,15 +64,25 @@ export default function App({ children}) {
   return (
     <html>
       <body>
-        <button 
+        <button
           disabled={connecting}
           onClick={() => (wallet ? disconnect(wallet) : connect())}
+          style={{
+            fontSize: '1.2rem', // Increase font size
+            padding: '10px 20px', // Add padding for larger button
+            position: 'fixed', // Position absolutely for right-side placement
+            right: '20px', // Set right margin for positioning
+            top: '10%', // Center vertically with transform
+            transform: 'translateY(-50%)', // Center vertically with transform
+            backgroundColor: '#C70039', // Set background color (optional)
+            color: '#fff', // Set text color (optional)
+            borderRadius: '5px', // Add border radius for smoother corners (optional)
+          }}
         >
-          {connecting ? "connecting" : wallet ? "disconnect" : "connect"}
+          {connecting ? "connecting" : wallet ? "disconnect" : "connectWallet"}
         </button>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem/>{children}
       </body>
     </html>
   );
-}
-
+        }
